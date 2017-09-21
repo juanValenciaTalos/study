@@ -1,0 +1,20 @@
+<div> 
+        <li *ngFor="let contact of contacts" >
+                <div class ="row">
+                        <div class="col-sm-6">
+                                {{ contact.id  }} - {{contact.name}}
+                        </div>
+                        <div class="col-sm-6">
+                                <button (click)="deleteContact(contact)" >delete</button>
+                        </div>
+                </div> 
+        </li>
+        <button (click)="showForm()">create</button>
+        <div [hidden]="!viewForm">
+                <label >id contact</label>
+                <input type="text" [(ngModel)]="contactId"/>
+                <label >name contact</label>
+                <input type="text" [(ngModel)]="contactName"/>
+                <button (click)="createContact()">create</button>
+        </div>
+</div>    
